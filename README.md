@@ -1,46 +1,36 @@
-# Getting Started with Create React App
+# Калкулатор за ДДС
+Страницата "Калкулатор за ДДС" представлява уеб приложение, което позволява на потребителите да изчисляват общата сума с ДДС върху дадена стойност. Приложението е разработено с React и използва Bootstrap за стилизация на интерфейса.
+Функционалности на страницата:
+1.	Въвеждане на сума без ДДС – Потребителят може да въведе стойност в текстово поле.
+2.	Изчисляване на ДДС – След натискане на бутона "Изчисли", системата добавя 20% ДДС към въведената сума и показва крайния резултат.
+3.	Валидация на входните данни – Ако потребителят въведе невалидна стойност (букви, празно поле и т.н.), системата не изчислява ДДС и не показва резултат.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Тестови случаи:
+### 1. Въвеждане на валидна сума и изчисляване на ДДС
+Стъпки:
+-	Въвеждане на сума (напр. 100) в полето за въвеждане.
+-	Натискане на бутона "Изчисли".
+-	Очакван резултат: Показване на текст "Обща сума с ДДС: 120.00 лв.".
+  
+### 2. Въвеждане на невалидна сума (букви)
+Стъпки:
+-	Въвеждане на невалидна стойност (напр. "abc") в полето.
+-	Натискане на бутона "Изчисли".
+-	Очакван резултат: Не се показва резултат с ДДС.
+  
+### 3. Оставяне на празно поле
+Стъпки:
+-	Натискане на бутона "Изчисли", без да се въвежда стойност.
+-	Очакван резултат: Не се показва резултат с ДДС.
+  
+### 4. Проверка на форматирането на резултата
+Стъпки:
+-	Въвеждане на стойност (например 123.4567).
+-	Натискане на бутона "Изчисли".
+-	Очакван резултат: Показване на резултат, закръглен до две цифри след десетичната запетая (напр. "Обща сума с ДДС: 148.15 лв.").
+  
+### 5. Проверка с гранични стойности
+Стъпки:
+-	Въвеждане на стойност "0".
+-	Натискане на бутона "Изчисли".
+-	Очакван резултат: Не трябва да се показва грешка, но резултатът трябва да бъде "Обща сума с ДДС: 0.00 лв.".
